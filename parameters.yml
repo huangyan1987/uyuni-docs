@@ -11,7 +11,7 @@ products:
       - attribute: docversion
         value: "4.3"
       - attribute: minorversion
-        value: "4.2.4"
+        value: "4.3"
       - attribute: suma-content
         value: true
       - attribute: uyuni-content
@@ -54,11 +54,11 @@ products:
       - attribute: productname
         value: "Uyuni"
       - attribute: productnumber
-        value: "2021.09"
+        value: "2022.07"
       - attribute: docversion
-        value: "2021.09"
+        value: "2022.07"
       - attribute: minorversion
-        value: "2021.09"
+        value: "2022.07"
       - attribute: suma-content
         value: false
       - attribute: uyuni-content
@@ -159,7 +159,7 @@ targets: #Other makefile target not strictly related to book. These targets will
     pre_lang_prerequisite: configure-uyuni
 asciidoc:
   - attribute: saltversion
-    value: 3002
+    value: 3004
   - attribute: sles-version
     value: 15
   - attribute:  sp-version
@@ -171,7 +171,7 @@ asciidoc:
   - attribute: smrproductnumber
     value: 4.3
   - attribute: opensuse-version
-    value: 15.3
+    value: 15.4
   - attribute: linkattrs
     value: true
   - attribute: sectlinks
@@ -214,6 +214,8 @@ asciidoc:
     value: SUSE Linux Enterprise Server with Expanded Support
   - attribute: sleda
     value: SLED
+  - attribute: unifiedinstaller
+    value: Unified Installer 
     # Clients
   - attribute: alibabaclo
     value: 'Alibaba Cloud Linux'
@@ -282,6 +284,10 @@ asciidoc:
     value: Web UI
   - attribute: jeos
     value: JeOS
+  - attribute: minimal
+    value: Minimal
+  - attribute: minimalsles
+    value: Minimal SLES
   - attribute: scc
     value: SUSE Customer Center
   - attribute: ncc

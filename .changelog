@@ -4,9 +4,73 @@
 # - Fixed error in Bat section of Upgrade Guide (bsc#1234567)
 # For guidelines: https://en.opensuse.org/openSUSE:Creating_a_changes_file_(RPM)#Changelog_section_.28.25changelog.29
 
+- Remove misleading installation screen shots in the Installation and Upgrade
+  Guide (bsc#1201411)
+- Fixed Ubuntu 18 Client registration in Client Configuration Guide (bsc#1201224)
+- Removed sle-module-pythonX in VM Installation chapter of Installation and
+  Upgrade Guide because SUSE Manager 4.3 does not require it
+- In the Custom Channel section of the Administration Guide add a note
+  about synchronizing repositories regularly.
+- Removed SLE 11 from the list of supported client systems
+- Update section about changing SSL certificates
+- Added ports 1232 and 1233 in the Ports section of the Installation and
+  Upgrade Guide; required for Salt SSH Push (bnc#1200532)
+- Fixed 'fast' switch ('-f') of the database migration script in Installation and
+  Upgrade Guide
+- Added Uyuni Proxy requirements in Installation and Upgrade Guide.
+- Updated Virtualization chapter in Client Configuration Guide; more on
+  limitation other than Xen and KVM.
+- Added information about registering RHEL clients on Azure in the Import
+  Entitlements and Certificates section of the Client Configuration Guide
+  (bsc#1198944).
+- Replaced two identical tables in two separate books (Install/Upgrade Guide
+  and Client Config Guide) with a single snippet
+- In the Client Configuration Guide, package locking is supported for Ubuntu
+  also on Uyuni
+- Remove Uyuni Client tools from the list of the proxy channels in
+  Installation and Upgrade Guide
+- Updated openSUSE Leap version number to 15.4.
+- Fixed VisibleIf documentation in Formula section of the Salt Guide
+- Added note about importing CA certifcate in Installation and Upgrade Guide
+  (bsc#1198358).
+- Documented defining monitored targets using file-based service discovery
+  provided in the Prometheus formula in the Salt Guide
+- In Supported Clients and Features chapter in Client Configuration Guide,
+  remove SLES 11 (bsc#1199147)
+- Improve traditional client deprecation statement in Client Configuration
+  Guide (bsc#1199714)
+- Fixed spacewalk-remove-channel command in Delete Channels section of the
+  Administration Guide (bsc#1199596)
+- Add note about OpenSCAP security profile support in OpenSCAP section of
+  the Administration Guide
+- Large deployments guide includes mention to proxy (bsc#1199577)
+- Enhanced Product Migration chapter in Client Configuration Guide with SLES
+  example.
+- In Common Workflows book, added new workflow for in-place upgrade of SLES
+  with SUSE Manager
+- In Administration Guide, Create Build Host section (docker), added warning
+  about OS verstion requirement.
+- In registration chapter of the Client Configuration Guide, add architecture
+  note snippet to all the "Add software channel" sections.
+- In Administration Guide, troubleshooting section, added content about high sync
+  times between Server and Proxy over WAN connections
+- In Administration Guide, documented the new behavior of spacewalk-report in
+  combination with the reporting database.
+- Documented org_createfirst in spacecmd chapter of the Reference Guide
+- In Client Configuration Guide, adjust sequence of sections about registering
+  RedHat Clients
+- In Administration Guide, documented that monitoring tools are available in
+  SUSE Linux Enterprise 12 and 15 and openSUSE Leap 15, but Grafana is not
+  available on Proxy (bsc#1191143)
+- Documented sle-module-python2 deactivation step in the minor version upgrade
+  section of the Upgrade and Installation Guide (bsc#1197747).
+- In the Large Deployments Guide, adapt tuning options for hub reporting according to latest
+  performance tests
+- Documented Autoyast installation features in Autoyast section of the Client
+  Configuration Guide
+- In Client Configuration Guide, clarified client upgrade issues.
 - In the Large Deployments Guide, enhance section about hub reporting to add tuning options
   for the taskomatic jobs
-- In the Large Deployments Guide, enhance section about hub reporting with taskomatic jobs
 - In Client Configuration Guide, added information about registration of
   version 12 of SUSE Linux Enterprise clients
 - In Client Configuration Guide, mark the applying patches features as supported
