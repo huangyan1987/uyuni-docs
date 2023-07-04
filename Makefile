@@ -47,7 +47,7 @@ define validate-product
 endef
 
 define enable-suma-in-antorayml
-#	$(call reset-html-language-selector-suma)
+	$(call reset-html-language-selector-suma)
 	cd ./$(1) && \
 	sed -i "s/^ # *\(name: *suse-manager\)/\1/;\
 	s/^ # *\(title: *SUSE Manager\)/\1/;\
@@ -59,11 +59,11 @@ endef
 define antora-suma-function
 	cd $(current_dir)
 	$(call enable-suma-in-antorayml,$(1)) && \
-	cd ./$(1) && DOCSEARCH_ENABLED=true DOCSEARCH_ENGINE=lunr LANG=$(2) LC_ALL=$(2) LC_ALL=$(2) antora $(current_dir)/$(1)/suma-site.yml --generator antora-site-generator-lunr
+	cd ./$(1) && DOCSEARCH_ENABLED=true SITE_SEARCH_PROVIDER=lunr LANG=$(2) LC_ALL=$(2) LC_ALL=$(2) npx antora --extension @antora/lunr-extension $(current_dir)/$(1)/suma-site.yml 
 endef
 
 define enable-uyuni-in-antorayml
-#	$(call reset-html-language-selector-uyuni)
+	$(call reset-html-language-selector-uyuni)
 	cd $(current_dir)/$(1) && \
 	sed -i "s/^ *\(name: *suse-manager\)/#\1/;\
 	s/^ *\(title: *SUSE Manager\)/#\1/;\
@@ -74,7 +74,7 @@ endef
 define antora-uyuni-function
 	cd $(current_dir)
 	$(call enable-uyuni-in-antorayml,$(1)) && \
-	cd $(current_dir)/$(1) && DOCSEARCH_ENABLED=true DOCSEARCH_ENGINE=lunr LANG=$(2) LC_ALL=$(2) LC_ALL=$(2) antora $(current_dir)/$(1)/uyuni-site.yml --generator antora-site-generator-lunr
+	cd $(current_dir)/$(1) && DOCSEARCH_ENABLED=true SITE_SEARCH_PROVIDER=lunr LANG=$(2) LC_ALL=$(2) LC_ALL=$(2) npx antora --extension @antora/lunr-extension $(current_dir)/$(1)/uyuni-site.yml
 endef
 
 define clean-function
@@ -122,8 +122,8 @@ define pdf-book-create
 	cd $(current_dir)/$(1) && LANG=$(9) LC_ALL=$(9) LC_TYPE=$(9) asciidoctor-pdf \
 		-r $(current_dir)/extensions/xref-converter.rb \
 		-a lang=$(8) \
-		-a pdf-stylesdir=$(PDF_THEME_DIR)/ \
-		-a pdf-style=$(2) \
+		-a pdf-themesdir=$(PDF_THEME_DIR)/ \
+		-a pdf-theme=$(2) \
 		-a pdf-fontsdir=$(PDF_FONTS_DIR) \
 		-a productname=$(3) \
 		-a suma-content=$(4) \
@@ -140,8 +140,8 @@ define pdf-book-create-uyuni
 	cd $(current_dir)/$(1) && LANG=$(9) LC_ALL=$(9) LC_TYPE=$(9) asciidoctor-pdf \
 		-r $(current_dir)/extensions/xref-converter.rb \
 		-a lang=$(8) \
-		-a pdf-stylesdir=$(PDF_THEME_DIR)/ \
-		-a pdf-style=$(2) \
+		-a pdf-themesdir=$(PDF_THEME_DIR)/ \
+		-a pdf-theme=$(2) \
 		-a pdf-fontsdir=$(PDF_FONTS_DIR) \
 		-a productname=$(3) \
 		-a uyuni-content=$(4) \
@@ -258,6 +258,18 @@ all-suma: configure-suma obs-packages-suma
 
 .PHONY: all-uyuni
 all-uyuni: configure-uyuni obs-packages-uyuni
+
+.PHONY: checkstyle
+checkstyle: 
+	cd $(current_dir)
+	find -name "*\.adoc" -type f  | xargs -I {} ./enforcing_checkstyle --filename {} --ifeval
+	find -name "nav*\.adoc" -type f  | xargs -I {} ./enforcing_checkstyle --filename {} --comment
+
+.PHONY: checkstyle-autofix
+checkstyle-autofix: 
+	cd $(current_dir)
+	find -name "*\.adoc" -type f  | xargs -I {} ./enforcing_checkstyle --filename {} --ifeval --fixmode
+	find -name "nav*\.adoc" -type f  | xargs -I {} ./enforcing_checkstyle --filename {} --comment --fixmode
 
 -include Makefile.section.functions
 -include Makefile.lang

@@ -2,16 +2,14 @@
 = Supported Clients and Features
 
 {productname} is compatible with a range of client technologies.
-You can install traditional or Salt clients, running {sle} or another Linux operating system, with a range of hardware options.
+You can install Salt clients running {sle} or another Linux operating system, with a range of hardware options.
 
 This section contains summary of supported client systems. For a detailed list of features available on each client, see the following pages.
 
-include::snippets/traditional_client_warning.adoc[]
-
-
+[[supported-features-clients]]
 == Supported Client Systems
 
-Supported operating systems for traditional and Salt clients are listed in this table.
+Supported operating systems for Salt clients are listed in this table.
 
 The icons in this table indicate:
 
@@ -31,19 +29,266 @@ For details on supported product versions, see https://www.suse.com/lifecycle.
 The operating system running on a client is supported by the organization that supplies the operating system.
 ====
 
-// Table with the list of the supported systems
-include::../../snippets/pages/supported-client-systems-snippet.adoc[]
+// Table with the list of the supported systems - PR 1600
+// include::../../snippets/pages/supported-client-systems-snippet.adoc[]
+
+// Revert PR 1600 
+[[supported-client-systems-snippet]]
+
+ifeval::[{suma-content} == true]
+[[mgr.support.clients]]
+[cols="1,1,1", options="header"]
+.Supported Client Systems
+|===
+| Operating System
+| Architecture
+| Salt Clients
+
+| {sle} 12
+| {x86_64}, {ppc64le}, {ibmz}, ARM
+| {check}
+
+| {sle} 15
+| {x86_64}, {ppc64le}, {ibmz}, ARM
+| {check}
+
+| {sles} for SAP 12
+| {x86_64}, {ppc64le}
+| {check}
+
+| {sles} for SAP 15
+| {x86_64}, {ppc64le}
+| {check}
+
+| {micro}
+| {x86_64}, {ppc64le}, {aarch64}
+| {check}
+
+| {opensuse} Leap 15
+| {x86_64}, {aarch64}
+| {check}
+
+| {sll} 9
+| {x86_64}
+| {check}
+
+| {sles} ES 7
+| {x86_64}
+| {check}
+
+| {sles} ES 8
+| {x86_64}
+| {check}
+
+| {almalinux} 8
+| {x86_64}, {aarch64}
+| {check}
+
+| {almalinux} 9
+| {x86_64}, {ppc64le}, {ibmz}, {aarch64}
+| {check}
+
+| {amazon} 2
+| {x86_64}, {aarch64}
+| {check}
+
+| {centos} 7
+| {x86_64}, {aarch64}
+| {check}
+
+| {debian} 10
+| {x86_64}
+| {check}
+
+| {debian} 11
+| {x86_64}
+| {check}
+
+| {oracle} 7
+| {x86_64}, {aarch64}
+| {check}
+
+| {oracle} 8
+| {x86_64}, {aarch64}
+| {check}
+
+| {oracle} 9
+| {x86_64}, {aarch64}
+| {check}
+
+| {rhel} 7
+| {x86_64}
+| {check}
+
+| {rhel} 8
+| {x86_64}
+| {check}
+
+| {rhel} 9
+| {x86_64}
+| {check}
+
+| {rocky} 8
+| {x86_64}, {aarch64}
+| {check}
+
+| {rocky} 9
+| {x86_64}, {aarch64}, {ppc64le}, {s390x}
+| {check}
+
+| {ubuntu} 18.04
+| {amd64}
+| {check}
+
+| {ubuntu} 20.04
+| {amd64}
+| {check}
+
+| {ubuntu} 22.04
+| {amd64}
+| {check}
+
+|===
+endif::[]
+
+
+ifeval::[{uyuni-content} == true]
+[[uyuni.supported.clients]]
+[cols="1,1,1", options="header"]
+.Supported Client Systems
+|===
+
+| Operating System
+| Architecture
+| Salt Clients
+
+| {sle} 12
+| {x86_64}, {ppc64le}, {ibmz}, ARM
+| {check}
+
+| {sle} 15
+| {x86_64}, {ppc64le}, {ibmz}, ARM
+| {check}
+
+| {sles} for SAP 12
+| {x86_64}, {ppc64le}
+| {check}
+
+| {sles} for SAP 15
+| {x86_64}, {ppc64le}
+| {check}
+
+| {micro}
+| {x86_64}, {ppc64le}, {aarch64}
+| {check}
+
+| {opensuse} Leap 15
+| {x86_64}, {aarch64}
+| {check}
+
+// SUSE Liberty Linux not available at Uyuni for now
+//| {sles} ES 7
+//| {x86_64}
+//| {check}
+
+// SUSE Liberty Linux not available at Uyuni for now
+//| {sles} ES 8
+//| {x86_64}
+//| {check}
+
+// SUSE Liberty Linux not available at Uyuni for now
+//| {sll} 9
+//| {x86_64}
+//| {check}
+
+| {alibabaclo} 2
+| {x86_64}, {aarch64}
+| {check}
+
+| {almalinux} 8
+| {x86_64}, {aarch64}
+| {check}
+
+| {almalinux} 9
+| {x86_64}, {ppc64le}, {ibmz}, {aarch64}
+| {check}
+
+| {amazon} 2
+| {x86_64}, {aarch64}
+| {check}
+
+| {centos} 7
+| {x86_64}, {ppc64le}, {aarch64}
+| {check}
+
+| {debian} 10
+| {x86_64}
+| {check}
+
+| {debian} 11
+| {x86_64}
+| {check}
+
+| {oracle} 7
+| {x86_64}, {aarch64}
+| {check}
+
+| {oracle} 8
+| {x86_64}, {aarch64}
+| {check}
+
+| {oracle} 9
+| {x86_64}, {aarch64}
+| {check}
+
+| {rhel} 7
+| {x86_64}
+| {check}
+
+| {rhel} 8
+| {x86_64}
+| {check}
+
+| {rhel} 9
+| {x86_64}
+| {check}
+
+| {rocky} 8
+| {x86_64}, {aarch64}
+| {check}
+
+| {rocky} 9
+| {x86_64}, {aarch64}, {ppc64le}, {s390x}
+| {check}
+
+| {ubuntu} 18.04
+| {amd64}
+| {check}
+
+| {ubuntu} 20.04
+| {amd64}
+| {check}
+
+| {ubuntu} 22.04
+| {amd64}
+| {check}
+
+|===
+endif::[]
 
 [NOTE]
 ====
-{debian} and {ubuntu} lists the {x86_64} architecture as amd64.
+{debian} and {ubuntu} list the {x86_64} architecture as {amd64}.
 ====
 
+//EOL clients
+include::snippets/eol-clients.adoc[]
 
 
 == Supported Tools Packages
 
 The ``spacewalk-utils`` and ``spacewalk-utils-extras`` packages can provide additional services and features.
+
 ifeval::[{suma-content} == true]
 The ``spacewalk-utils`` package in {productname} is fully supported by {suse}, and contains these tools:
 endif::[]

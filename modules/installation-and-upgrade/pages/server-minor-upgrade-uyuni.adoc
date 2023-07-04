@@ -1,4 +1,4 @@
-[server-minor-upgrade]
+[[server-minor-upgrade]]
 = Server - Minor Upgrade
 
 Several times a year, the {productname} team releases minor upgrades of the {productname} Server.
@@ -7,12 +7,12 @@ These updates address bug fixes and feature improvements, and sometimes include 
 [IMPORTANT]
 ====
 Some additional manual steps might be required, and this information is only available in the release notes.
-For important extra information about your upgrade, see the release notes at https://www.uyuni-project.org/pages/stable-version.html.
+For more information about such a major upgrade, see xref:installation-and-upgrade:server-major-upgrade-uyuni.adoc[].
+
+For information about your upgrade, see the release notes at https://www.uyuni-project.org/pages/stable-version.html.
 ====
 
 Performing a minor upgrade is similar to installing operating system package updates.
-// It is recommended to install them in due time.
-// In general, these steps are required:
 
 .Procedure: Updating Packages on the {productname} Server
 
@@ -20,6 +20,8 @@ By default, several update repositories are configured and enabled for the {prod
 New and updated packages become available automatically.
 
 It is recommended you make a backup of the server before upgrading.
+For more information about backing up {productname}, see xref:administration:backup-restore.adoc[].
+
 
 . On the {productname} Server, at the command prompt, as root, stop the spacewalk services:
 +
@@ -42,11 +44,16 @@ zypper ref
 +
 
 ----
-zypper up 
+zypper up
 ----
+[NOTE]
+====
+Uyuni is different from SUSE Manager in this step.
+SUSE Manager uses [command]``zypper patch``, but Uyuni requires [command]``zypper up``.
+====
 +
 
-. If zypper reports that the Uyuni package won't be upgraded, run the command manually:
+. If zypper reports that the Uyuni package will not be upgraded, run the command manually:
 +
 
 ----

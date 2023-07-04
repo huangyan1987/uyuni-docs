@@ -4,18 +4,17 @@
 This section contains information about registering traditional and Salt clients running {alibabaclo} operating systems.
 
 ifeval::[{suma-content} == true]
+// Use list format: repository URLs / packages and metadata / version info
 [IMPORTANT]
 ====
-{alibabaclo} repository URLs are available from {scc}, but the packages and metadata are provided by Alibaba Cloud, not by {suse}.
+* {alibabaclo} repository URLs are available from {scc}
+* Packages and metadata are provided by Alibaba Cloud, not by {suse}
+* For supported products, see the support table and the release notes
 ====
 endif::[]
 
-
-[IMPORTANT]
-====
 The traditional stack is available on {alibabaclo}{nbsp}2 but it is not supported.
 {alibabaclo}{nbsp}2 clients are only supported as Salt clients.
-====
 
 [WARNING]
 ====
@@ -118,7 +117,7 @@ For more information on activation keys, see xref:client-configuration:activatio
 
 == Register Clients
 
-{alibabaclo} clients are registered in the same way as all other clients.
+include::snippets/create_bootstrap_repo_register.adoc[]
 
 Some {alibabaclo}{nbsp}2 instances will fail to register on the first try.
 
@@ -129,5 +128,3 @@ an RPM package, which can cause a conflict on the first attempt to register.
 
 If your instance is based on one of the affected image versions, the client 
 should register correctly on the second registration attempt.
-
-For more information about client registration, see xref:client-configuration:registration-overview.adoc[].

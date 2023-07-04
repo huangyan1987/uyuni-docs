@@ -1,18 +1,11 @@
 [[supported-features-sle-micro]]
-= Supported {micro} and {opensuse}{nbsp}{microos} Client Features
+= Supported {micro} Client Features
 
-[WARNING]
-====
-Support for {micro} and {opensuse}{nbsp}{microos} clients is provided as a technology preview for testing purposes, and not all features are fully functional at this stage.
-This feature is expected to be fully supported in a later version of {productname}.
-Do not use this feature on production systems.
-====
 
 [IMPORTANT]
 ====
 The operating system you run on a client is supported by the organization that supplies the operating system.
 {micro} is supported by {suse}.
-{opensuse}{nbsp}{microos} is supported by the {suse} community.
 ====
 
 
@@ -26,11 +19,11 @@ The icons in this table indicate:
 
 
 [cols="1,1", options="header"]
-.Supported Features on {micro} and {opensuse}{nbsp}{microos} Operating Systems
+.Supported Features on {micro} Operating Systems
 |===
 
 | Feature
-| {micro} and {opensuse}{nbsp}{microos}
+| {micro}
 
 | Client
 | {salt}
@@ -66,25 +59,25 @@ The icons in this table indicate:
 | {salt}
 
 | Product migration
-| {question}
+| {salt}
 
 | Basic Virtual Guest Management {star}
-| {question}
+| {salt}
 
 | Advanced Virtual Guest Management {star}
-| {question}
+| {salt}
 
 | Virtual Guest Installation (Kickstart), as Host OS
-| {cross}
+| {salt}
 
 | Virtual Guest Installation (image template), as Host OS
-| {question}
+| {salt}
 
 | System deployment (PXE/Kickstart)
-| {question}
+| {salt}
 
 | System redeployment (Kickstart)
-| {cross}
+| {salt}
 
 | Contact methods
 | {salt}: ZeroMQ
@@ -93,7 +86,7 @@ The icons in this table indicate:
 | {salt}
 
 | Action chains
-| {question}
+| {salt}
 
 | Staging (pre-download of packages)
 | {question}
@@ -131,7 +124,10 @@ The icons in this table indicate:
 | Power management
 | {salt}
 
-| Monitoring
+| Monitoring server
+| {cross}
+
+| Monitored clients
 | {salt}
 
 | Docker buildhost
